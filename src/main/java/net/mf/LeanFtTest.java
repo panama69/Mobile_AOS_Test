@@ -1,4 +1,4 @@
-package net.hpe;
+package net.mf;
 
 import static org.junit.Assert.*;
 
@@ -45,7 +45,8 @@ public class LeanFtTest extends UnitTestClassBase {
         System.out.println (deviceInfo[0].getName());
 */
         // select device and app
-        Device device = MobileLab.lockDeviceById("ce12160cf13ad41d05");
+        // you will need to provide the device ID which is availalbe in your Mobile Center installation.
+        Device device = MobileLab.lockDeviceById("ce031713bc66a70d05");
         Application app = device.describe(Application.class, new ApplicationDescription.Builder().identifier("com.Advantage.aShopping").build());
         app.restart();
 

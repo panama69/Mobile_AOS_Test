@@ -1,54 +1,60 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>net.hpe</groupId>
+    <groupId>net.mf</groupId>
     <artifactId>aos-test</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>LeanFT JUnit Test</name>
     <description>LeanFT JUnit Test</description>
 
+    <properties>
+        <junit.ver>4.12</junit.ver>
+        <lft.ver>RELEASE</lft.ver>
+        <mvn.compiler.plugin.ver>3.8.0</mvn.compiler.plugin.ver>
+        <jdk.compiler.ver>1.8</jdk.compiler.ver>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.ver}</version>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>sdk</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>sdk</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
             <classifier>javadoc</classifier>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>report</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>reportbuilder</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>unittesting</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
         </dependency>
 
         <dependency>
             <groupId>com.hp.lft</groupId>
             <artifactId>verifications</artifactId>
-            <version>14.0.0</version>
+            <version>${lft.ver}</version>
         </dependency>
     </dependencies>
 
@@ -61,13 +67,15 @@
     </repositories>
 
     <build>
+        <testSourceDirectory>src/main/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mvn.compiler.plugin.ver}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>${jdk.compiler.ver}</source>
+                    <target>${jdk.compiler.ver}</target>
                 </configuration>
             </plugin>
 
